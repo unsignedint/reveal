@@ -21,4 +21,6 @@ COPY --from=0 /opt/venv /opt/venv
 WORKDIR /app
 COPY server.py .
 
+ENV PATH="/opt/venv/bin:$PATH"
+EXPOSE 8080
 CMD ["python", "server.py"]
